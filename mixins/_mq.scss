@@ -1,0 +1,33 @@
+@mixin mq($media) {
+  @if $media == phone-landscape or $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+ @else if $media == tablet-portrait or $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  } 
+ @else if $media == tablet-landscape or $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+  @else if $media == desktop or $media == lg {
+    @media only screen and (min-width: $screen-lg) { @content; }
+  }
+} 
+
+@mixin respondto($media) {
+  @if $media == phone-landscape or $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+ @else if $media == tablet-portrait or $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  } 
+ @else if $media == tablet-landscape or $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+  @else if $media == desktop or $media == lg {
+    @media only screen and (min-width: $screen-lg) { @content; }
+  } 
+}
+
+@mixin respond($width: 320px) {
+  @media only screen and (max-width: $width) { @content; } 
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sjd-sass-mixins",
+  "version": "0.0.1",
+  "authors": [
+    "Shane Donnelly <shanejdonnelly@gmail.com>"
+  ],
+  "description": "My Sass Mixins",
+  "main": "mixins.scss",
+  "keywords": [
+    "Sass",
+    "mixins"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

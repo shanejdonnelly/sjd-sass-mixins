@@ -1,0 +1,25 @@
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vert_center{ 
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin horz_center{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); 
+}
+
+@mixin undo_horz_center{
+  position: static;
+  left: auto;
+  transform: none; 
+}
+

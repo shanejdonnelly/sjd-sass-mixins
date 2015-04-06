@@ -1,0 +1,14 @@
+@mixin colored_links($color, $hover, $active, $underline: false) { 
+    text-decoration: none;
+    color: $color;
+    &:hover  { 
+      color: $hover;
+      @if ($underline) {
+        padding-bottom: 2px;
+        border-bottom: 1px solid $underline;
+      }
+    }
+    &:active { color: $active } 
+}
+
+@mixin mobile_nav_links() { @include colored_links($white, $white, $white); } 

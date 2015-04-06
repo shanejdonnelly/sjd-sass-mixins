@@ -1,0 +1,31 @@
+@mixin overlay( 
+  $bg_color: $blue, 
+  $color: $white, 
+  $font_size: 16px, 
+  $left: true, 
+  $position: 6%, 
+  $opacity: 0.75, 
+  $padding: 15px, 
+  $top: true )
+{
+  @if($top){
+    top: $position;
+  }
+  @else{
+    bottom: $position;
+  }
+
+  @if($left){
+    left: 0;
+  }
+  @else{
+    right: 0;
+  }
+
+  background-color: rgba($bg_color, $opacity);
+  color: $color;
+  @include rem('font-size', $font_size); 
+  @include rem('padding', $padding);
+
+}
+
