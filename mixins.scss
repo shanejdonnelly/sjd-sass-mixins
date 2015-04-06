@@ -1,8 +1,204 @@
-@import 'mixins/_mq';
-@import 'mixins/_centerer';
-@import 'mixins/_clearfix';
-@import 'mixins/_gradients';
-@import 'mixins/_links';
-@import 'mixins/_overlay';
-@import 'mixins/_rem';
-@import 'mixins/_transition';
+/*! sjd-sass-mixins - v0.11.0 - 2015-04-06 */
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vert_center{ 
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin horz_center{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); 
+}
+
+@mixin undo_horz_center{
+  position: static;
+  left: auto;
+  transform: none; 
+}
+
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin brown_gradient(){
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0MDMwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMTIyMDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #040300 0%, #312204 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#040300), color-stop(100%,#312204)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #040300 0%,#312204 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #040300 0%,#312204 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #040300 0%,#312204 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #040300 0%,#312204 100%); /* W3C */
+}
+
+//used for homepage signup bar
+@mixin orange_gradient(){
+  background: #fcaf17; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcaf17 0%, #ff8a00 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcaf17), color-stop(100%,#ff8a00)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fcaf17 0%,#ff8a00 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fcaf17 0%,#ff8a00 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fcaf17 0%,#ff8a00 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fcaf17 0%,#ff8a00 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcaf17', endColorstr='#ff8a00',GradientType=0 ); /* IE6-9 */ 
+}
+
+@mixin slider_gradient(){
+  background: #ebebeb; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ebebeb 0%, #cfcfcf 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebebeb), color-stop(100%,#cfcfcf)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ebebeb 0%,#cfcfcf 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ebebeb 0%,#cfcfcf 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ebebeb 0%,#cfcfcf 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ebebeb 0%,#cfcfcf 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#cfcfcf',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin active_slider_gradient(){
+  background: #fafafa; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fafafa 0%, #e3e1de 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#e3e1de)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fafafa 0%,#e3e1de 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fafafa 0%,#e3e1de 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fafafa 0%,#e3e1de 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fafafa 0%,#e3e1de 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e3e1de',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin colored_links($color, $hover, $active, $underline: false) { 
+    text-decoration: none;
+    color: $color;
+    &:hover  { 
+      color: $hover;
+      @if ($underline) {
+        padding-bottom: 2px;
+        border-bottom: 1px solid $underline;
+      }
+    }
+    &:active { color: $active } 
+}
+
+@mixin mobile_nav_links() { @include colored_links($white, $white, $white); } 
+
+@mixin mq($media) {
+  @if $media == phone-landscape or $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+ @else if $media == tablet-portrait or $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  } 
+ @else if $media == tablet-landscape or $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+  @else if $media == desktop or $media == lg {
+    @media only screen and (min-width: $screen-lg) { @content; }
+  }
+} 
+
+@mixin respondto($media) {
+  @if $media == phone-landscape or $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+ @else if $media == tablet-portrait or $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  } 
+ @else if $media == tablet-landscape or $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+  @else if $media == desktop or $media == lg {
+    @media only screen and (min-width: $screen-lg) { @content; }
+  } 
+}
+
+@mixin respond($width: 320px) {
+  @media only screen and (max-width: $width) { @content; } 
+}
+
+@mixin overlay( 
+  $bg_color: $blue, 
+  $color: $white, 
+  $font_size: 16px, 
+  $left: true, 
+  $position: 6%, 
+  $opacity: 0.75, 
+  $padding: 15px, 
+  $top: true )
+{
+  @if($top){
+    top: $position;
+  }
+  @else{
+    bottom: $position;
+  }
+
+  @if($left){
+    left: 0;
+  }
+  @else{
+    right: 0;
+  }
+
+  background-color: rgba($bg_color, $opacity);
+  color: $color;
+  @include rem('font-size', $font_size); 
+  @include rem('padding', $padding);
+
+}
+
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: 16px;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem * 1;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+  #{$property}: $px-values / $baseline-rem; }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: ();
+    @each $value in $px-values {
+      // If the value is zero or not a number, return it
+      @if $value == 0 or type-of( $value ) != "number" {
+      $rem-values: append($rem-values, $value); }
+      @else {
+    $rem-values: append($rem-values, $value / $baseline-rem); } }
+    // Return the property and its list of converted values
+#{$property}: $rem-values; } }
+
+@mixin transition($transition-property: all, $transition-time: .25s, $method: ease) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin notransition() {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
